@@ -8,3 +8,5 @@ Painting Board made with VanillaJS
    ; mode button, save button, paint brush range controller
 4. add canvas js
    ; detect mouse movement
+5. add context
+   ; detect path to mark start point and draw lineTo & stroke
