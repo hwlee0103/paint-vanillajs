@@ -12,3 +12,5 @@ Painting Board made with VanillaJS
    ; detect path to mark start point and draw lineTo & stroke
 6. give size to pixel modifier
    ; give canvas element pixel manipulating size to make user able to draw lines
+7. get color html element to array
+   ; get background-color and change brush-color
