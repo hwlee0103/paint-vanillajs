@@ -3,12 +3,24 @@ const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
-//pixel modifier size
-canvas.width = 700;
-canvas.height = 700;
 
-ctx.strokeStyle = "#2c2c2c";
+const INITIAL_COLOR = "#2c2c2c";
+const CANVAS_SIZE = 700;
+
+//pixel modifier size
+canvas.width = CANVAS_SIZE;
+canvas.height = CANVAS_SIZE;
+
+ctx.strokeStyle = INITIAL_COLOR;
+ctx.fillStyle = INITIAL_COLOR;
 ctx.lineWidth = 2.5;
+
+//ctx.fillStyle = "green";
+//x, y, width, height
+//ctx.fillRect(50, 20, 100, 40);
+
+//ctx.fillStyle = "purple";
+//ctx.fillRect(80, 100, 100, 40);
 
 let painting = false;
 let filling = false;
@@ -47,6 +59,7 @@ function handleColorClick(event) {
   const color = event.target.style.backgroundColor;
   //console.log(color);
   ctx.strokeStyle = color;
+  ctx.fillStyle = color;
 }
 
 function handleRangeChange(event) {
@@ -65,11 +78,21 @@ function handleModeClick() {
   }
 }
 
+function handleCanvasClick() {
+  //same size as canvas size
+  //start x, y, and canvas size width, height
+  if (filling) {
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  }
+  //canvas.width대신 CANVAS_SIZE써도 된다.
+}
+
 if (canvas) {
   canvas.addEventListener("mousemove", onMouseMove);
   canvas.addEventListener("mousedown", onMouseDown);
   canvas.addEventListener("mouseup", stopPainting);
   canvas.addEventListener("mouseleave", stopPainting);
+  canvas.addEventListener("click", handleCanvasClick);
 }
 
 //console.log(Array.from(colors));

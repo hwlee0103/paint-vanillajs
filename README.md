@@ -18,3 +18,6 @@ Painting Board made with VanillaJS
    ; to change brush size
 9. add eventlistener to fill btn
    ; change mode button
+10. use fillRect()
+    ; to make color-filling mode work on canvas
+    ; now user can draw and fill on canvas!
