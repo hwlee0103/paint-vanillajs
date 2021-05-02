@@ -21,3 +21,9 @@ Painting Board made with VanillaJS
 10. use fillRect()
     ; to make color-filling mode work on canvas
     ; now user can draw and fill on canvas!
+11. set canvas background white
+    ; otherwise, image will be saved with transparent background
+12. saving image
+    ; use HTMLCanvasElement.toDataURL()
+    ; make html a tag; href = image, download = download image name
+    ; make link clicked
